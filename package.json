@@ -2,7 +2,7 @@
   "name": "projeto-final-reprograma",
   "version": "1.0.0",
   "description": "Está aplicação é uma API que tem como foco o cadastramento de estabelecimentos e usuários que tenham sugestões de lugares e hospedagem próximos para  a prática do Canicross.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
@@ -20,6 +20,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mongoose": "^5.12.14",
     "nodemon": "^2.0.7"
   }
 }
