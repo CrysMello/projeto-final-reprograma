@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const establishmentSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
@@ -59,4 +60,4 @@ const establishmentSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("establishment", establishmentSchema)
+module.exports = mongoose.model("establishment", establishmentSchema);
