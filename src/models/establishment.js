@@ -1,63 +1,62 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const establishmentSchema = new mongoose.Schema({
+
+const EstablishmentSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   nome: {
     type: String,
     unique: false,
     require: true,
   },
-  CNPJ: {
+  cnpj: {
     type: String,
     unique: true,
     required: true,
   },
-  Estado: {
+  estado: {
     type: String,
     unique: false,
     required: true,
   },
-  Estado: {
+  cidade: {
     type: String,
     unique: false,
     required: true,
   },
-  Bairro: {
+  bairro: {
     type: String,
     unique: false,
     required: false,
   },
-  CEP: {
+  cep: {
     type: String,
     unique: false,
     required: false,
   },
-  Telefone: {
+  telefone: {
     type: String,
     unique: false,
     required: true,
   },
-  E_Mail: {
+  e_mail: {
     type: String,
     unique: true,
     required: false,
   },
-  Site: {
+  site: {
     type: String,
     unique: false,
     required: false,
   },
-  Tipos_de_Atividades: [
+  tipos_atividades:
     {
       type: String,
-      Atividades: ["Canicross", "Hospedagem", "trilhas proximas"],
     },
-  ],
   createdAt: {
     type: Date,
-    defaut: Date.now,
+    defaut: new Date,
   },
 });
 
-module.exports = mongoose.model("establishment", establishmentSchema);
+module.exports = mongoose.model("establishment", EstablishmentSchema);
+

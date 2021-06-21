@@ -1,1 +1,0 @@
-MONGO_URI:"mongoose://localhostel:27017"

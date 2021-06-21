@@ -5,12 +5,14 @@ const mongoose = require("mongoose");
 
 const connect = () => {
   mongoose
-    .connect("MONGO_URI", {
+    .connect(process.env.MONGODB_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true,
     })
     .then(console.log("Database conectada com sucesso"))
     .catch((err) => console.error);
 };
 
-module.exports = { connect };
+module.exports = {connect}
