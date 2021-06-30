@@ -3,19 +3,11 @@ const mongoose = require("mongoose");
 const Establishment = require("../models/establishment");
 
 
-const getAll = async(req, resp) => {
-  response.status(200).json(Establishment);
-};
 
-const getById = (req, resp) => {
-  const idRequered = request.params.id
-  const establishmentFilter = Establishment.find((establishment) => establishment.id == idRequered);
-
-  resp.status(200).send(establishmentFilter);
-};
+// CREATE
 
 const PostEstablishment = async (request, response) => {
-  const nomeRequired = request.body.nome
+  const nomeRequired = request.body.nome;
   const cnpjRequired = request.body.cnpj;
   const estadoRequired = request.body.estado;
   const cidadeRequired = request.body.cidade;
@@ -38,10 +30,10 @@ const PostEstablishment = async (request, response) => {
     e_mail: e_mailRequerid,
     site: siteRequerid,
     tipo_atividade: tipo_atividadeRequerid,
-  })
+  });
 
   try {
-    const postSave = await newPost.save()
+    const postSave = await newPost.save();
 
     response.status(201).json([
       {
@@ -49,16 +41,30 @@ const PostEstablishment = async (request, response) => {
         newPost,
       },
     ]);
-  }
-  catch (err) {
+  } catch (err) {
     response.status(500).send({
-      mensagem: err.message
-    })
+      mensagem: err.message,
+    });
   }
 };
 
+//READ
+
+const showEstablishments = async (request, response) => {
+  try {
+  const establishments = await Establishment.find();
+  return response.status(200).json(establishments);
+  }
+  catch (err) {
+    return res.status(500).json({
+      mensagem: err.message
+    })
+  }
+
+};
+
 module.exports = {
-  getAll,
-  getById,
+
   PostEstablishment,
-}
+  showEstablishments,
+};

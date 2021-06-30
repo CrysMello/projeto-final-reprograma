@@ -1,14 +1,8 @@
-//const establishment = require("./src/models/establishment");
-//const express = require("express");
-//const app = express();
-//const mongoose = require("mongoose");
-//const bodyParser = require("body-parser");
+
 
 const app = require("./app")
 
-//criando rotas
 
-//const establishmentRouter = require ("./src/routes/establishmentRoutes")
 
 const PORT = process.env.PORT || 8080;
 

@@ -12,7 +12,7 @@ app.use(express.json());
 
 const posts = require("./src/routes/establishmentRoutes");
 
-//app.get("/", (req,res) => res.status(200).send("ok")
+
 
 app.get("/", (req, resp) => {
   resp.status(200).json({

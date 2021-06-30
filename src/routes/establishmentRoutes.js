@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.post("/register", controller.PostEstablishment)
 
+router.get("/register", controller.showEstablishments)
 
-router.get("/", (req,res)=> res.status(200).send("ok"))
+
 module.exports = router
