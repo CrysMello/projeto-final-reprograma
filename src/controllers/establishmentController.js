@@ -30,11 +30,6 @@ const createEstablishment = async (request, response) => {
     tipo_atividade: tipo_atividadeRequerid,
   });
 
-  const establishmentExist = await Establishment.findOne({ nome: req.body.nome });
-  if (establishmentExist) {
-  return response.status(409).json({ error: "Estabelecimento já cadastrado!" });
-  }
-
   try {
     const postSave = await newPost.save();
 
@@ -74,45 +69,36 @@ const updateStablishment = async (request, response) => {
       .json({ message: "Estabelecimento não encontrado." });
   }
   if (request.body.nome != null) {
-    discoverEstablishment.name = request.body.nome
+    discoverEstablishment.name = request.body.nome;
   }
   try {
-    
-    const establishmentUpdate = await searchEstablishment.save()
-      
-    res.status(200).json(establishmentUpdate)
+    const establishmentUpdate = await searchEstablishment.save();
+
+    res.status(200).json(establishmentUpdate);
   } catch (err) {
-    res.status(500).json({ message: err.message })
+    res.status(500).json({ message: err.message });
   }
-}
+};
 
 //DELETE
 
 const deleteEstablishiment = async (req, res) => {
-    const encontraEstudio = await Establishment.findById(req.params.id)
-    if(encontraEstudio == null) {
-        return res.status(404).json({message: 'estudio não encontrado.'})
-    }
+  const encontraEstudio = await Establishment.findById(req.params.id);
+  if (encontraEstudio == null) {
+    return res.status(404).json({ message: "estudio não encontrado." });
+  }
 
-    try {
-        await searchEstablishment.remove();
-        res.status(200).json({message: 'foi deletado com sucesso'})
-    } catch (err) {
-        res.status(500).json({ message: err.message})
-    } 
-}
-
-
-
-
-
-
-
+  try {
+    await searchEstablishment.remove();
+    res.status(200).json({ message: "foi deletado com sucesso" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
 module.exports = {
   createEstablishment,
   showEstablishments,
   updateStablishment,
   deleteEstablishiment,
-
 };

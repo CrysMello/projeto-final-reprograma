@@ -7,8 +7,8 @@ router.post("/register", controller.createEstablishment)
 
 router.get("/register", controller.showEstablishments)
 
-router.patch("/:id", controller.updateStablishment);
+router.patch("/register/:id", controller.updateStablishment);
 
-router.delete("/:id", controller.deleteEstablishiment)
+router.delete("/register/:id", controller.deleteEstablishiment)
 
 module.exports = router
