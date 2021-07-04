@@ -62,7 +62,7 @@ const showEstablishments = async (request, response) => {
 //UPDATE
 
 const updateStablishment = async (request, response) => {
-  const discoverEstablishment = await Establishment.findById(request.params.id);
+  const discoverEstablishment = await Establishment.findById(request.params.nome);
   if (discoverEstablishment == null) {
     return response
       .status(404)
@@ -83,7 +83,7 @@ const updateStablishment = async (request, response) => {
 //DELETE
 
 const deleteEstablishiment = async (req, res) => {
-  const encontraEstudio = await Establishment.findById(req.params.id);
+  const encontraEstudio = await Establishment.findById(req.params.nome);
   if (encontraEstudio == null) {
     return res.status(404).json({ message: "estudio não encontrado." });
   }

@@ -5,6 +5,8 @@ require("dotenv").config()
 
 const db = require("./src/data/database");
 
+//conectando mongodb
+
 db.connect();
 
 app.use(cors());
