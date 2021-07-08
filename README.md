@@ -2,7 +2,7 @@
 
 Deploy: https://plataforma-pousada-bom-pra-dog.herokuapp.com/
 
-O projeto foi criado para ajudar pessoas que gostam de viajar com seus cachorros, mas precisam de locais que possam se hospedar e ou locais que aceite levar eles, como por exemplo: cafeterias, bares, restaurantes e etc.
+O projeto foi criado para ajudar pessoas que gostam de viajar com seus cachorros, mas precisam de locais que possam se hospedar e ou lugares pet friendly, como por exemplo: cafeterias, bares, restaurantes e etc.
 
 Está aplicação é uma API que tem como foco o cadastramento de estabelecimentos  que tenham sugestões de lugares e hospedagem próximos para  a prática de Canicross.
 

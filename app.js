@@ -15,7 +15,6 @@ app.use(express.json());
 const posts = require("./src/routes/establishmentRoutes");
 
 
-
 app.get("/", (req, resp) => {
   resp.status(200).json({
     mensagem: "Tudo na normalidade!",
@@ -26,5 +25,9 @@ app.get("/establishment", (req, resp) => {
 });
 
 app.use("/", posts)
+
+app.get("/", async (req, res) => {
+  res.json({ message: "Deploy heroku!" });
+});
 
 module.exports = app;
